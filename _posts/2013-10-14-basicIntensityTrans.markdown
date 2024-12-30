@@ -21,8 +21,8 @@ $$
 $$
 
 负片变换，主要用于观察过黑的图片，负片变换之后，方便观察。很简单的变换。
-<div align=center><img src="../assets/Image-Negativates.jpeg" width="500"></div>
-
+![ImageNegativates](/assets/Image-Negativates.jpeg)
+<!-- <div align=center><img src="../assets/Image-Negativates.jpeg" width="200"></div> -->
 
 
 [Digital Image Processing homepage]: https://www.imageprocessingplace.com/
