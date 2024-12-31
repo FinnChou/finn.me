@@ -84,11 +84,13 @@ xlabel('d).Log Transformations v=200');
 &nbsp;
 ## 伽马变换 (Power-Law (Gamma) Transformations )
 伽马变换主要用于图像的校正，将漂白的图片或者是过黑的图片，进行修正。伽马变换也常常用于显示屏的校正，这是一个非常常用的变换。其变化所用数学式如下所示，
+
 $$
 \begin{aligned}
 {res_{(x,y)} = c * src_{(x,y)}^{\gamma} , \hspace{3mm} src_{(x,y)} \in [0,1]}
 \end{aligned}
 $$
+
 其输入满足$src_{(x,y)} \in [0, 1]$，其输出亦满足$res_{(x,y)} \in [0, 1]$。 对于不同的伽马值，其对应的变换曲线如下图所示。
 <div align=center><img src="{{ site.baseurl }}/assets/basic-Intensity-Transformations-Functions/Gamma-Transformations.jpeg" width="300"></div>
 
