@@ -21,8 +21,8 @@ $$
 $$
 
 负片变换，主要用于观察过黑的图片，负片变换之后，方便观察。很简单的变换。
-![ImageNegativates](/assets/Image-Negativates.jpeg)
-<!-- <div align=center><img src="../assets/Image-Negativates.jpeg" width="200"></div> -->
+<!-- ![ImageNegativates](/assets/Image-Negativates.jpeg) -->
+<div align=center><img src="/assets/basic-Intensity-Transformations-Functions/Image-Negativates.jpeg" width="500"></div>
 
 ## 对数变换 (Log Transformations)
 对数变换主要用于将图像的低灰度值部分扩展，将其高灰度值部分压缩，以达到强调图像低灰度部分的目的。变换方法由下式给出。
@@ -33,10 +33,10 @@ $$
 $$
 
 这里的对数变换，底数为$v + 1$，实际计算的时候，需要用换底公式。其输入满足$src_{(x,y)} \in [0, 1]$，其输出亦满足$res_{(x,y)} \in [0, 1]$。对于不同的底数，其对应的变换曲线如下图所示。
-![LogTransformations](/assets/Log-Transformations.jpeg)
+![LogTransformations](/assets/basic-Intensity-Transformations-Functions/Log-Transformations.jpeg)
 
 底数越大，对低灰度部分的强调就越强，对高灰度部分的压缩也就越强。相反的，如果想强调高灰度部分，则用反对数函数就可以了。看下面的实验就可以很直观的理解，下图是某图像的二维傅里叶变换图像，其为了使其灰度部分较为明显，一般都会使用灰度变换处理一下。
-![LogTransformationsFFT](/assets/Log-Transformations-FFT.jpeg)
+![LogTransformationsFFT](/assets/basic-Intensity-Transformations-Functions/Log-Transformations-FFT.jpeg)
 
 实现对数变换的Matlab代码如下：
 
@@ -84,11 +84,11 @@ $$
 $$
 其输入满足$src_{(x,y)} \in [0, 1]$，其输出亦满足$res_{(x,y)} \in [0, 1]$。 对于不同的伽马值，其对应的变换曲线如下图所示。
 
-![GammaTransformations](/assets/Gamma-Transformations.jpeg)
+![GammaTransformations](/assets/basic-Intensity-Transformations-Functions/Gamma-Transformations.jpeg)
 
 和对数变换一样，伽马变换可以强调图像的某个部分。根据下面两个实验，可以看出伽马变换的作用。
 #### 实验1 :
-![GammaTransformationsTest1](/assets/Gamma-Transformations-t1.jpeg)
+![GammaTransformationsTest1](/assets/basic-Intensity-Transformations-Functions/Gamma-Transformations-t1.jpeg)
 {% highlight matlab %}
 close all;
 clear all;
@@ -112,10 +112,17 @@ xlabel('b).Gamma Transformations \gamma = 0.4');
 {% endhighlight %}
 
 #### 实验2 :
-![GammaTransformationsTest2](/assets/Gamma-Transformations-t2.jpeg)
+![GammaTransformationsTest2](/assets/basic-Intensity-Transformations-Functions/Gamma-Transformations-t2.jpeg)
+
+
+
+
+
+
+
+
+
+
 
 
 [Digital Image Processing homepage]: https://www.imageprocessingplace.com/
-
-
-
