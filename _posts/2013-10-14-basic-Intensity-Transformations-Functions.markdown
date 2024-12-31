@@ -23,7 +23,7 @@ $$
 $$
 
 负片变换，主要用于观察过黑的图片，负片变换之后，方便观察。很简单的变换。
-<div align=center><img src="/assets/basic-Intensity-Transformations-Functions/Image-Negativates.jpeg" width="600"></div>
+<div align=center><img src="{{ site.baseurl }}/assets/basic-Intensity-Transformations-Functions/Image-Negativates.jpeg" width="600"></div>
 
 ### 对数变换 (Log Transformations)
 对数变换主要用于将图像的低灰度值部分扩展，将其高灰度值部分压缩，以达到强调图像低灰度部分的目的。变换方法由下式给出。
@@ -34,10 +34,10 @@ $$
 $$
 
 这里的对数变换，底数为$v + 1$，实际计算的时候，需要用换底公式。其输入满足$src_{(x,y)} \in [0, 1]$，其输出亦满足$res_{(x,y)} \in [0, 1]$。对于不同的底数，其对应的变换曲线如下图所示。
-<div align=center><img src="/assets/basic-Intensity-Transformations-Functions/Log-Transformations.jpeg" width="300"></div>
+<div align=center><img src="{{ site.baseurl }}/assets/basic-Intensity-Transformations-Functions/Log-Transformations.jpeg" width="300"></div>
 
 底数越大，对低灰度部分的强调就越强，对高灰度部分的压缩也就越强。相反的，如果想强调高灰度部分，则用反对数函数就可以了。看下面的实验就可以很直观的理解，下图是某图像的二维傅里叶变换图像，其为了使其灰度部分较为明显，一般都会使用灰度变换处理一下。
-<div align=center><img src="/assets/basic-Intensity-Transformations-Functions/Log-Transformations-FFT.jpeg" width="600"></div>
+<div align=center><img src="{{ site.baseurl }}/assets/basic-Intensity-Transformations-Functions/Log-Transformations-FFT.jpeg" width="600"></div>
 
 实现对数变换的Matlab代码如下：
 
@@ -84,12 +84,12 @@ $$
 \end{aligned}
 $$
 其输入满足$src_{(x,y)} \in [0, 1]$，其输出亦满足$res_{(x,y)} \in [0, 1]$。 对于不同的伽马值，其对应的变换曲线如下图所示。
-<div align=center><img src="/assets/basic-Intensity-Transformations-Functions/Gamma-Transformations.jpeg" width="300"></div>
+<div align=center><img src="{{ site.baseurl }}/assets/basic-Intensity-Transformations-Functions/Gamma-Transformations.jpeg" width="300"></div>
 
 
 和对数变换一样，伽马变换可以强调图像的某个部分。根据下面两个实验，可以看出伽马变换的作用。
 #### 实验1 :
-<div align=center><img src="/assets/basic-Intensity-Transformations-Functions/Gamma-Transformations-t1.jpeg" width="600"></div>
+<div align=center><img src="{{ site.baseurl }}/assets/basic-Intensity-Transformations-Functions/Gamma-Transformations-t1.jpeg" width="600"></div>
 
 {% highlight matlab %}
 close all;
@@ -114,7 +114,7 @@ xlabel('b).Gamma Transformations \gamma = 0.4');
 {% endhighlight %}
 
 #### 实验2 :
-<div align=center><img src="/assets/basic-Intensity-Transformations-Functions/Gamma-Transformations-t2.jpeg" width="600"></div>
+<div align=center><img src="{{ site.baseurl }}/assets/basic-Intensity-Transformations-Functions/Gamma-Transformations-t2.jpeg" width="600"></div>
 
 ### 对比度拉伸 (Contrast Stretching)
 对比度拉伸也用于强调图像的某个部分，与伽马变换与对数变换不同的是，对比度拉升可以改善图像的动态范围。可以将原来低对比度的图像拉伸为高对比度图像。实现对比度拉升的方法很多，其中最简单的一种就是线性拉伸。而这里介绍的方法稍微复杂一些。灰度拉伸所用数学式如下所示。
@@ -140,7 +140,7 @@ res = mat2gray(src, [1/(1+(m/eps)^E) 1/(1+(m/1+eps)^E)]);
 {% endhighlight %}
 
 输入输出问题解决了，还有一个问题，参数的决定。这里有两个参数，一个是$m$（相对于巴特沃斯高通滤波器而言，这个是截止频率），一个是$E$（相对于 巴特沃斯高通滤波器而言，这个是滤波器次数）。m可以控制变换曲线的重心，E则可以控制曲线的斜率，如下图所示。
-<div align=center><img src="/assets/basic-Intensity-Transformations-Functions/Contrast-Stretching.jpeg" width="600"></div>
+<div align=center><img src="{{ site.baseurl }}/assets/basic-Intensity-Transformations-Functions/Contrast-Stretching.jpeg" width="600"></div>
 
 $m$值的可取图像灰度分布的中央值，如下式所示，
 
@@ -161,10 +161,10 @@ E &= ceil(min(E_{1}, E_{2})
 $$
 
 #### 实验:
-<div align=center><img src="/assets/basic-Intensity-Transformations-Functions/Contrast-Stretching-t1.jpeg" width="600"></div>
+<div align=center><img src="{{ site.baseurl }}/assets/basic-Intensity-Transformations-Functions/Contrast-Stretching-t1.jpeg" width="600"></div>
 
 从直方图看，原图的灰度范围确实被拉伸了。用上面所说的方法，确定的灰度拉伸的输入输出曲线如下图所示。
-<div align=center><img src="/assets/basic-Intensity-Transformations-Functions/Contrast-Stretching-t1-curve.jpeg" width="300"></div>
+<div align=center><img src="{{ site.baseurl }}/assets/basic-Intensity-Transformations-Functions/Contrast-Stretching-t1-curve.jpeg" width="300"></div>
 
 其Matlab代码如下：
 
@@ -233,17 +233,17 @@ ylabel('Onput intensity level');
 ### 灰度切割 (Intensity-level Slicing)
 灰度切割也是一个很简单，但也很实用的变换。灰度切割，主要用于强调图像的某一部份，将这个部分赋为一个较高的灰度值，其变换对应关系如下所示。
 
-<div align=center><img src="/assets/basic-Intensity-Transformations-Functions/Intensity-level-Slicing.jpeg" width="600"></div>
+<div align=center><img src="{{ site.baseurl }}/assets/basic-Intensity-Transformations-Functions/Intensity-level-Slicing.jpeg" width="600"></div>
 
 灰度切割有以上两种方法，一种是特定灰度值的部分赋值为一个较高的灰度值，其余部分为一个较低的灰度值。这样的方法，得到的结果是一个二值化图像。另外一种方法，则是仅仅强调部分赋值为一个较高的灰度值，其余的部分不变。
 
 
-<div align=center><img src="/assets/basic-Intensity-Transformations-Functions/Intensity-level-Slicing-t1.jpeg" width="600"></div>
+<div align=center><img src="{{ site.baseurl }}/assets/basic-Intensity-Transformations-Functions/Intensity-level-Slicing-t1.jpeg" width="600"></div>
 
 ### 位图切割 (Bit-plance Slicing)
 位图切割，就是按照图像的位，将图像分层处理。若图像的某个像素，其bit7为1，则在位面7这个像素值为1，反之则为0。
 
-<div align=center><img src="/assets/basic-Intensity-Transformations-Functions/Bit-plance-Slicing.jpeg" width="600"></div>
+<div align=center><img src="{{ site.baseurl }}/assets/basic-Intensity-Transformations-Functions/Bit-plance-Slicing.jpeg" width="600"></div>
 
 由位图切割的结果，图像的主要信息包含在了高4位。仅仅靠高4位，还原的图像更原图基本差不多。由此可见，位图切割主要用于图像压缩。
 
