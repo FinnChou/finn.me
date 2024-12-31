@@ -24,8 +24,8 @@ title: Finn.Zhou Pages
 #   🇯🇵 zhoufan1148158886 # yahoo.co.jp
 description: 
     💻 计算机 x 📷 相机 行业从业者的 Pages
-# baseurl: "" # the subpath of your site, e.g. /blog
-# url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Finn_Chou_
 github_username:  FinnChou
 
@@ -34,8 +34,7 @@ theme: minima
 plugins:
   - jekyll-feed
 
-
-markdown: kramdown
+# markdown: kramdown
 
 # Exclude from processing.
 # The following items will not be processed, by default.
