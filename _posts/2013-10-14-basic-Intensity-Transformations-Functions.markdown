@@ -1,15 +1,17 @@
 ---
 layout: post
-title: "灰度变换—负片，对数变换，伽马变换，灰度拉伸，灰度切割，位图切割"
+title: "Intensity Transformations : 负片，对数变换，伽马变换，灰度拉伸，灰度切割，位图切割"
 date: 2013-10-14 16:54:36 +0800
 # categories: jekyll update
 ---
 
 ### 前言
-灰度变换，属于一个非常重要的概念。这里主要参考《Digital Image Processing》 Rafael C. Gonzalez / Richard E. Woods 的第三章。书中所有的实验与数学式都采用了8-bit 图像的灰度范围，也就是0到255这样一个范围，这是本书不合理的一个地方。首先，这样做并不泛用，图片不一定是8-bit的。其次，在做某些变换的时候，可能会导致溢出。比如，伽马变化，假设伽马值为2，那么灰度为255的像素点，其变换之后值为65025，这里就溢出了。当然，要是使用Matlab计算，肯定会处理的非常好，直接使用mat2gray函数就能将其压缩回0到255。但是要是其他嵌入式平台处理的时候，直接套用不方便不说，直接按照8-bit的图来理解很不直观。因此，我将数学式做了改变，让其输入为0到1的浮点数，其输出也是0到1的浮点数，这样方便理解。
+灰度变换(Intensity Transformationsm)属于一个非常重要的概念。本文主要参考《Digital Image Processing》 Rafael C. Gonzalez / Richard E. Woods 的第三章。书中所有的实验与数学式都采用了8-bit 图像的灰度范围，也就是0到255这样一个范围，这是本书不合理的一个地方。首先，这样做并不泛用，图片不一定是8-bit的。其次，在做某些变换的时候，可能会导致溢出。比如，伽马变化，假设伽马值为2，那么灰度为255的像素点，其变换之后值为65025，这里就溢出了。当然，要是使用Matlab计算，肯定会处理的非常好，直接使用mat2gray函数就能将其压缩回0到255。但是要是其他嵌入式平台处理的时候，直接套用不方便不说，直接按照8-bit的图来理解很不直观。因此，我将数学式做了改变，让其输入为0到1的浮点数，其输出也是0到1的浮点数，这样方便理解。
 
 本文所使用的图片，均来源于《Digital Image Processing》的主页：
 - [Digital Image Processing homepage]
+
+[Digital Image Processing homepage]: https://www.imageprocessingplace.com/
 
 ### 图像负片 (Image Negativates)
 有地方翻译为图像反转，这个翻译不是很恰当。这里应该理解为负片变换，负片变换如下所示。
@@ -113,7 +115,6 @@ xlabel('b).Gamma Transformations \gamma = 0.4');
 
 #### 实验2 :
 <div align=center><img src="/assets/basic-Intensity-Transformations-Functions/Gamma-Transformations-t2.jpeg" width="600"></div>
-
 
 ### 对比度拉伸 (Contrast Stretching)
 对比度拉伸也用于强调图像的某个部分，与伽马变换与对数变换不同的是，对比度拉升可以改善图像的动态范围。可以将原来低对比度的图像拉伸为高对比度图像。实现对比度拉升的方法很多，其中最简单的一种就是线性拉伸。而这里介绍的方法稍微复杂一些。灰度拉伸所用数学式如下所示。
@@ -252,6 +253,3 @@ ylabel('Onput intensity level');
 本文于2013年，发布在 CSDN。
 执行移动作业时候，重新使用 Latex 将公式进行了重写。回忆起了当时在使用CSDN时候，由于无法插入 Latex 公式，只能每个公式都是贴图像的无奈。这个算是reHD版本了。
 同时轻微修复了语言上的一些逻辑。
-
-
-[Digital Image Processing homepage]: https://www.imageprocessingplace.com/
