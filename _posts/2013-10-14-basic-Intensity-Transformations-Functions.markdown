@@ -5,7 +5,7 @@ date: 2013-10-14 16:54:36 +0800
 # categories: jekyll update
 ---
 
-### 前言
+## 前言
 灰度变换(Intensity Transformationsm)属于一个非常重要的概念。本文主要参考《Digital Image Processing》 Rafael C. Gonzalez / Richard E. Woods 的第三章。书中所有的实验与数学式都采用了8-bit 图像的灰度范围，也就是0到255这样一个范围，这是本书不合理的一个地方。首先，这样做并不泛用，图片不一定是8-bit的。其次，在做某些变换的时候，可能会导致溢出。比如，伽马变化，假设伽马值为2，那么灰度为255的像素点，其变换之后值为65025，这里就溢出了。当然，要是使用Matlab计算，肯定会处理的非常好，直接使用mat2gray函数就能将其压缩回0到255。但是要是其他嵌入式平台处理的时候，直接套用不方便不说，直接按照8-bit的图来理解很不直观。因此，我将数学式做了改变，让其输入为0到1的浮点数，其输出也是0到1的浮点数，这样方便理解。
 
 本文所使用的图片，均来源于《Digital Image Processing》的主页：
@@ -13,7 +13,9 @@ date: 2013-10-14 16:54:36 +0800
 
 [Digital Image Processing homepage]: https://www.imageprocessingplace.com/
 
-### 图像负片 (Image Negativates)
+
+&nbsp;
+## 图像负片 (Image Negativates)  
 有地方翻译为图像反转，这个翻译不是很恰当。这里应该理解为负片变换，负片变换如下所示。
   
 $$
@@ -25,6 +27,8 @@ $$
 负片变换，主要用于观察过黑的图片，负片变换之后，方便观察。很简单的变换。
 <div align=center><img src="{{ site.baseurl }}/assets/basic-Intensity-Transformations-Functions/Image-Negativates.jpeg" width="600"></div>
 
+
+&nbsp;
 ### 对数变换 (Log Transformations)
 对数变换主要用于将图像的低灰度值部分扩展，将其高灰度值部分压缩，以达到强调图像低灰度部分的目的。变换方法由下式给出。
 $$
@@ -76,7 +80,9 @@ imshow(g_3,[0 1]);
 xlabel('d).Log Transformations v=200');
 {% endhighlight %}
 
-### 伽马变换 (Power-Law (Gamma) Transformations )
+
+&nbsp;
+## 伽马变换 (Power-Law (Gamma) Transformations )
 伽马变换主要用于图像的校正，将漂白的图片或者是过黑的图片，进行修正。伽马变换也常常用于显示屏的校正，这是一个非常常用的变换。其变化所用数学式如下所示，
 $$
 \begin{aligned}
@@ -88,7 +94,8 @@ $$
 
 
 和对数变换一样，伽马变换可以强调图像的某个部分。根据下面两个实验，可以看出伽马变换的作用。
-#### 实验1 :
+
+### 实验1 :
 <div align=center><img src="{{ site.baseurl }}/assets/basic-Intensity-Transformations-Functions/Gamma-Transformations-t1.jpeg" width="600"></div>
 
 {% highlight matlab %}
@@ -113,10 +120,12 @@ imshow(g2,[0 1]);
 xlabel('b).Gamma Transformations \gamma = 0.4');
 {% endhighlight %}
 
-#### 实验2 :
+### 实验2 :
 <div align=center><img src="{{ site.baseurl }}/assets/basic-Intensity-Transformations-Functions/Gamma-Transformations-t2.jpeg" width="600"></div>
 
-### 对比度拉伸 (Contrast Stretching)
+
+&nbsp;
+## 对比度拉伸 (Contrast Stretching)
 对比度拉伸也用于强调图像的某个部分，与伽马变换与对数变换不同的是，对比度拉升可以改善图像的动态范围。可以将原来低对比度的图像拉伸为高对比度图像。实现对比度拉升的方法很多，其中最简单的一种就是线性拉伸。而这里介绍的方法稍微复杂一些。灰度拉伸所用数学式如下所示。
 
 $$
@@ -154,13 +163,13 @@ $$
 
 $$
 \begin{aligned}
-E_{1} &= log_{\frac{m}{Min(res_{x,y})}}(\frac{1.0}{0.05} - 1.0) \\
-E_{2} &= log_{\frac{m}{Max(res_{x,y})}}(\frac{1.0}{0.95} - 1.0) \\
+E_{1} &= log_{\frac{m}{Min(res_{(x,y)})}}(\frac{1.0}{0.05} - 1.0) \\
+E_{2} &= log_{\frac{m}{Max(res_{(x,y)})}}(\frac{1.0}{0.95} - 1.0) \\
 E &= ceil(min(E_{1}, E_{2})
 \end{aligned}
 $$
 
-#### 实验:
+### 实验:
 <div align=center><img src="{{ site.baseurl }}/assets/basic-Intensity-Transformations-Functions/Contrast-Stretching-t1.jpeg" width="600"></div>
 
 从直方图看，原图的灰度范围确实被拉伸了。用上面所说的方法，确定的灰度拉伸的输入输出曲线如下图所示。
@@ -230,7 +239,9 @@ ylabel('Onput intensity level');
 {% endhighlight %}
 
 
-### 灰度切割 (Intensity-level Slicing)
+
+&nbsp;
+## 灰度切割 (Intensity-level Slicing)
 灰度切割也是一个很简单，但也很实用的变换。灰度切割，主要用于强调图像的某一部份，将这个部分赋为一个较高的灰度值，其变换对应关系如下所示。
 
 <div align=center><img src="{{ site.baseurl }}/assets/basic-Intensity-Transformations-Functions/Intensity-level-Slicing.jpeg" width="600"></div>
@@ -240,6 +251,8 @@ ylabel('Onput intensity level');
 
 <div align=center><img src="{{ site.baseurl }}/assets/basic-Intensity-Transformations-Functions/Intensity-level-Slicing-t1.jpeg" width="600"></div>
 
+
+&nbsp;
 ### 位图切割 (Bit-plance Slicing)
 位图切割，就是按照图像的位，将图像分层处理。若图像的某个像素，其bit7为1，则在位面7这个像素值为1，反之则为0。
 
@@ -249,7 +262,8 @@ ylabel('Onput intensity level');
 
 
 
-### 追记
+&nbsp;
+## 追记
 本文于2013年，发布在 CSDN。
 执行移动作业时候，重新使用 Latex 将公式进行了重写。回忆起了当时在使用CSDN时候，由于无法插入 Latex 公式，只能每个公式都是贴图像的无奈。这个算是reHD版本了。
 同时轻微修复了语言上的一些逻辑。
