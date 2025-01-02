@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "FIR滤波器基础"
+title: "[数字信号处理]1.FIR滤波器基础"
 date: 2013-05-23 17:36:36 +0800
 # categories: jekyll update
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "单位冲击响应与频响以及FIR实现代码 (C语言)"
+title: "[数字信号处理]3.单位冲击响应，频响与FIR滤波器实现(C语言)"
 date: 2013-05-29 13:01:47 +0800
 # categories: jekyll update
 ---
@@ -17,7 +17,7 @@ $$
 \begin{aligned}
 H_{z}(e^{j\omega}) &= \sum_{n=-20}^{20}h_z(n)e^{-j \omega n} \\
                    &= h_z(0) + \sum_{n=1}^{20}h_z(n)(e^{-j \omega n} + e^{j \omega n}) \\
-                   &= h_z(0) + \sum_{n=1}^{20}2h_z(n)COS \\
+                   &= h_z(0) + \sum_{n=1}^{20}2h_z(n)cos(\omega n) \\
 \end{aligned}
 $$
 
