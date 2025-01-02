@@ -141,4 +141,4 @@ int main(void)
 一个FIR滤波器已成功实现。只需不断输入信号，按下ESC键即可停止程序。
 其单位冲击响应在Matlab中的表示如下。
 
-<div align=center><img src="{{ site.baseurl }}/assets/FIR-Filter/FIR-Filter-2.jpeg" width="300"></div>
+<div align=center><img src="{{ site.baseurl }}/assets/FIR-Filter/FIR-Filter-Sys.jpeg" width="300"></div>
