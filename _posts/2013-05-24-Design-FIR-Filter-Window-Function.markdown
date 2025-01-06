@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[数字信号处理]2.使用窗函数设计FIR滤波器"
-date: 2013-05-29 13:01:47 +0800
+date: 2013-05-24 14:25:02 +0800
 # categories: jekyll update
 ---
 &nbsp;

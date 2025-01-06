@@ -142,3 +142,12 @@ int main(void)
 其单位冲击响应在Matlab中的表示如下。
 
 <div align=center><img src="{{ site.baseurl }}/assets/FIR-Filter/FIR-Filter-Sys.jpeg" width="300"></div>
+
+
+<div style="font-size:16px">
+    <span style="float:right"> 
+        <a href="{{ site.baseurl }}/2013/05/24/Design-FIR-Filter-Window-Function.html"> [下一回] >> </a>
+        <!-- [下一回] >>　 -->
+    </span>　
+        <!-- << [上一回]  -->
+</div>
