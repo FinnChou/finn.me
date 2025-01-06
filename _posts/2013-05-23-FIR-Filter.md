@@ -146,7 +146,7 @@ int main(void)
 
 <div style="font-size:16px">
     <span style="float:right"> 
-        <a href="{{ site.baseurl }}/2013/05/24/Design-FIR-Filter-Window-Function.html"> [下一回] >> </a>
+        <a href="{% link _posts/2013-05-24-FIR-Filter-Design-1.md %}"> [下一回] >> </a>
         <!-- [下一回] >>　 -->
     </span>　
         <!-- << [上一回]  -->

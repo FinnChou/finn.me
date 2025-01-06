@@ -290,4 +290,11 @@ $$
 红色的“+”是Matlab计算的结果，黑的o是我用C语言实现的滤波器的计算结果，蓝的*号是1KHz的信号，也就是希望的输出。可以看出，这个滤波器虽然有一定的延迟，但是在延迟后的滤波效果是符合预期的。
 
 
-
+&nbsp;
+&nbsp;
+<div style="font-size:16px">
+    <span style="float:right"> 
+        <a href="{% link _posts/2013-06-05-IIR-Filter.md %}"> [下一回] >> </a>
+    </span>　
+        <a href="{% link _posts/2013-05-24-FIR-Filter-Design-1.md %}"> << [上一回] </a>
+</div>

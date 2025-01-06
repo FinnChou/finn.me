@@ -53,3 +53,11 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# Minima: custom header links
+header_pages:
+    - _pages/about.md
+    - _pages/archive.md
+
+include:
+    - _pages

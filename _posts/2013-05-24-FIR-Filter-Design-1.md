@@ -167,3 +167,11 @@ $$
 解决这个问题的方法，以及窗函数的FIR设计代码，将在下一节中详细介绍。
 
 
+&nbsp;
+&nbsp;
+<div style="font-size:16px">
+    <span style="float:right"> 
+        <a href="{% link _posts/2013-05-29-FIR-Filter-Design-2.md %}"> [下一回] >> </a>
+    </span>　
+        <a href="{% link _posts/2013-05-23-FIR-Filter.md %}"> << [上一回] </a>
+</div>

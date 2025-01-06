@@ -734,3 +734,12 @@ int main(void)
 其频率响应如下所示。
 
 <div align=center><img src="{{ site.baseurl }}/assets/Design-IIR-Filter-1/Design-IIR-Filter-1-2.jpeg" width="450"></div>
+
+&nbsp;
+&nbsp;
+<div style="font-size:16px">
+    <span style="float:right"> 
+        <!-- <a href="{% link _posts/2013-06-10-IIR-Filter-Design-1.md %}"> [下一回] >> </a> -->
+    </span>　
+        <a href="{% link _posts/2013-06-05-IIR-Filter.md %}"> << [上一回] </a>
+</div>
