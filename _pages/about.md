@@ -5,22 +5,25 @@ permalink: /about/
 ---
 
 
-About Me 
----
+<div class="about-section">
 
-Resume
----
+  <p>在这里添加描述</p>
 
-Connect
----
+  <hr style="border: 2px solid #ccc; margin: 20px 0;">
+  <p>在这里添加描述</p>
 
-History
----
-#### 2024.12.30:
-  - 本日开始，开始执行CSDN侧的移动作业。 原始地址：[Finn's CSDN]
+  <h2>Resume</h2>
+  <hr style="border: 2px solid #ccc; margin: 20px 0;">
+  <p>在这里添加描述</p>
 
-Blog archive
+  <h2>Connect</h2>
+  <hr style="border: 2px solid #ccc; margin: 20px 0;">
+  <p>在这里添加描述</p>
 
-[Finn's CSDN]: https://blog.csdn.net/zhoufan900428
-
-
+  <h2>History</h2>
+  <hr style="border: 2px solid #ccc; margin: 20px 0;">
+  <h4>2024.12.30:</h4>
+  <ul>
+    <li>本日开始，开始执行CSDN侧的移动作业。 原始地址：<a href="https://blog.csdn.net/zhoufan900428">Finn's CSDN</a></li>
+  </ul>
+</div>
