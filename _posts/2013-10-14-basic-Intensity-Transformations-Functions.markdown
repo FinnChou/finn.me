@@ -2,6 +2,7 @@
 layout: post
 title: "Intensity Transformations : 负片，对数变换，伽马变换，灰度拉伸，灰度切割，位图切割"
 date: 2013-10-14 16:54:36 +0800
+tags: 数字图像处理
 # categories: jekyll update
 ---
 

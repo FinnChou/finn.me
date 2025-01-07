@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "[数字信号处理]4.IIR滤波器基础"
+title: "4.IIR滤波器基础"
 date: 2013-06-05 22:28:16 +0800
+tags: 数字信号处理
 # categories: jekyll update
 ---
 

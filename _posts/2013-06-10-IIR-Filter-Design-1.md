@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "[数字信号处理]5.IIR滤波器的间接设计"
+title: "5.IIR滤波器的间接设计"
 date: 2013-06-10 12:46:10 +0800
+tags: 数字信号处理
 # categories: jekyll update
 ---
 
@@ -290,7 +291,7 @@ s &= \frac{2}{T} \frac{1 - e^{-j\omega}}{1 + e^{-j\omega}} \\
 \end{aligned}
 $$
 
-到这里，我们可以就可以得到Ω与ω的对应关系了。
+到这里，我们可以就可以得到$\Omega$与$\omega$的对应关系了。
 
 $$
 \begin{aligned}
@@ -739,7 +740,7 @@ int main(void)
 &nbsp;
 <div style="font-size:16px">
     <span style="float:right"> 
-        <!-- <a href="{% link _posts/2013-06-10-IIR-Filter-Design-1.md %}"> [下一回] >> </a> -->
+        <a href="{% link _posts/2013-06-11-IIR-Filter-Design-2.md %}"> [下一回] >> </a>
     </span>　
         <a href="{% link _posts/2013-06-05-IIR-Filter.md %}"> << [上一回] </a>
 </div>

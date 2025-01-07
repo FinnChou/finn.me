@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "[数字信号处理]3.单位冲击响应，频响与FIR滤波器实现(C语言)"
+title: "3.单位冲击响应，频响与FIR滤波器实现(C语言)"
 date: 2013-05-29 13:01:47 +0800
+tags: 数字信号处理
 # categories: jekyll update
 ---
 
