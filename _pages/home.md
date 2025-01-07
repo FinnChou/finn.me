@@ -5,4 +5,3 @@ list_title: Posts
 permalink: /
 ---
 
-

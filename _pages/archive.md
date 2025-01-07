@@ -7,8 +7,13 @@ permalink: /archive/
 {% assign tags = site.posts | map: "tags" | uniq %}
 {% for tag in tags %}
 <h3>{{ tag }}</h3>
-<p> 
-这里加入描述
+<p>
+{% case tag %}
+{% when "数字信号处理" %}
+描述 1111
+{% when "数字图像处理" %}
+描述 2222
+{% endcase %}
 </p>
 <hr style="border: 2px solid #ccc; margin: 20px 0;">
 <ul>
@@ -22,5 +27,4 @@ permalink: /archive/
 </ul>
 <br>
 {% endfor %}
-
 
