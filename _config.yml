@@ -23,7 +23,7 @@ title: Finn's blog
 #   🇨🇳 wheat1148158886 # gmail.com 
 #   🇯🇵 zhoufan1148158886 # yahoo.co.jp
 description: 💻 计算机 x 📷 相机 行业从业者的 Pages
-baseurl: /finn.github.io # the subpath of your site, e.g. /blog
+baseurl: /finn.me # the subpath of your site, e.g. /blog
 # url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Finn_Chou_
 github_username: FinnChou
