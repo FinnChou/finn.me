@@ -4,26 +4,12 @@ title: About me
 permalink: /about/
 ---
 
+<div align=center><img src="{{ site.baseurl }}/assets/About_Me/Me_Rect_2023.jpg" width="300"></div>
 
-<div class="about-section">
+<div align=center style="font-size: 30px;">$\mathcal{Fan (Finn) Zhou}$</div>
 
-  <p>在这里添加描述</p>
+<div align=center style="font-size: 18px;"> Email : 🇨🇳 wheat1148158886 [at]gmail.com</div>
+<div align=center style="font-size: 18px;"> Email : 🇯🇵 zhoufan1148158886 [at] yahoo.co.jp</div>
 
-  <hr style="border: 2px solid #ccc; margin: 20px 0;">
-  <p>在这里添加描述</p>
 
-  <h2>Resume</h2>
-  <hr style="border: 2px solid #ccc; margin: 20px 0;">
-  <p>在这里添加描述</p>
 
-  <h2>Connect</h2>
-  <hr style="border: 2px solid #ccc; margin: 20px 0;">
-  <p>在这里添加描述</p>
-
-  <h2>History</h2>
-  <hr style="border: 2px solid #ccc; margin: 20px 0;">
-  <h4>2024.12.30:</h4>
-  <ul>
-    <li>本日开始，开始执行CSDN侧的移动作业。 原始地址：<a href="https://blog.csdn.net/zhoufan900428">Finn's CSDN</a></li>
-  </ul>
-</div>
