@@ -747,7 +747,7 @@ int main(void)
 &nbsp;
 <div style="font-size:16px">
     <span style="float:right"> 
-        <a href="{% link _posts/2013-06-11-IIR-Filter-Design-2.md %}"> [下一回] >> </a>
+        <a href="{{ site.baseurl }}/2013/06/11/IIR-Filter-Design-2"> [下一回] >> </a>
     </span>　
-        <a href="{% link _posts/2013-06-05-IIR-Filter.md %}"> << [上一回] </a>
+        <a href="{{ site.baseurl }}/2013/06/05/IIR-Filter"> << [上一回] </a>
 </div>

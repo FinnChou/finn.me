@@ -219,7 +219,7 @@ int main(void)
 
 从频率响应分析结果来看，该滤波器的幅频特性确实体现了低通滤波器的基本特征。然而，在相位特性方面存在一些值得关注的问题。为了对相位特性进行准确分析，需要采用相位解卷绕技术进行处理。
 
-相位解卷绕的相关讨论，请参考<a href="{% link _posts/2013-06-02-FIR-Filter-Phase-Unwrapping.md %}"> >>[番外]相位特性解卷绕 << </a> 。
+相位解卷绕的相关讨论，请参考<a href="{{ site.baseurl }}/2013/06/02/FIR-Filter-Phase-Unwrapping"> >>[番外]相位特性解卷绕 << </a> 。
 
 通过对相位特性的深入分析发现，该FIR滤波器的相位响应与理论预期的线性特性存在偏差。特别是在接近阻带起始频率$\omega_s$的区域，相位响应出现了明显的波动。这种非理想特性的成因及其对系统性能的影响将在后文中进行系统性分析。
 
@@ -256,7 +256,7 @@ $$
 &nbsp;
 <div style="font-size:16px">
     <span style="float:right"> 
-        <a href="{% link _posts/2013-06-05-IIR-Filter.md %}"> [下一回] >> </a>
+        <a href="{{ site.baseurl }}/2013/06/05/IIR-Filter"> [下一回] >> </a>
     </span>　
-        <a href="{% link _posts/2013-05-24-FIR-Filter-Design-1.md %}"> << [上一回] </a>
+        <a href="{{ site.baseurl }}/2013/05/24/FIR-Filter-Design-1"> << [上一回] </a>
 </div>

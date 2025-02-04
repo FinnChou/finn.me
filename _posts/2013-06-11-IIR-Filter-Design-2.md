@@ -619,5 +619,5 @@ $$
     <span style="float:right"> 
         <!-- <a href="{% link _posts/2013-06-10-IIR-Filter-Design-1.md %}"> [下一回] >> </a> -->
     </span>　
-        <a href="{% link _posts/2013-06-10-IIR-Filter-Design-1.md %}"> << [上一回] </a>
+        <a href="{{ site.baseurl }}/2013/06/10/IIR-Filter-Design-1"> << [上一回] </a>
 </div>

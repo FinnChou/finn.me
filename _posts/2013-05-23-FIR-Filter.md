@@ -150,8 +150,7 @@ int main(void)
 
 <div style="font-size:16px">
     <span style="float:right"> 
-        <a href="{% link _posts/2013-05-24-FIR-Filter-Design-1.md %}"> [下一回] >> </a>
-        <!-- [下一回] >>　 -->
+        <a href="{{ site.baseurl }}/2013/05/24/FIR-Filter-Design-1"> [下一回] >> </a>
     </span>　
         <!-- << [上一回]  -->
 </div>
