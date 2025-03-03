@@ -10,6 +10,9 @@ layout: base
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {{ page.date | date: date_format }}
       </time>
+      <span class="page-visit" style="margin-left: 15px;">
+        | 阅读量：<span id="busuanzi_value_page_pv"></span>次
+      </span>
       {%- if page.modified_date -%}
         ~ 
         {%- assign mdate = page.modified_date | date_to_xmlschema -%}

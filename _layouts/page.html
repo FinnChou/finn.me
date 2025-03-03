@@ -5,6 +5,16 @@ layout: base
 
   <header class="post-header">
     <h1 class="post-title">{{ page.title | escape }}</h1>
+    
+    <!-- 添加PV统计容器 -->
+    <div class="page-pv-container" style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+      <div></div> <!-- 占位空元素 -->
+      <div class="page-pv" style="color: #666; font-size: 0.9em;">
+        <span id="busuanzi_container_page_pv">
+          本页访问量：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+      </div>
+    </div>
   </header>
 
   <div class="post-content">
