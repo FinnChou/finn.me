@@ -32,6 +32,7 @@ github_username: FinnChou
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -58,9 +59,10 @@ show_excerpts: true
 
 # Minima: custom header links
 header_pages:
-    - _pages/home.md
     - _pages/archive.md
+    # - _pages/home.md
     - _pages/about.md
 
 include:
     - _pages
+
