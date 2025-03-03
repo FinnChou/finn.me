@@ -1,4 +1,4 @@
 ---
 layout: home
-redirect_from: /archive/
+redirect_to: /archive/
 ---

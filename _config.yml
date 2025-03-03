@@ -60,7 +60,6 @@ show_excerpts: true
 # Minima: custom header links
 header_pages:
     - _pages/archive.md
-    # - _pages/home.md
     - _pages/about.md
 
 include:
