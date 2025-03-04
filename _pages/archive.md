@@ -14,7 +14,7 @@ permalink: /archive/
 
 修订版现发布于此，原CSDN文章将择期归档。 - [Finn's CSDN 数字信号处理专栏]
 
-[Finn's CSDN 数字信号处理专栏]: https://blog.csdn.net/zhoufan900428/category_1428367.html?spm=1001.2014.3001.5482
+[Finn's CSDN 数字信号处理专栏]: https://blog.csdn.net/zhoufan900428/category_1428367.html
 
 <ul>
     <li><a href="{{ site.baseurl }}/2013/05/23/FIR-Filter">1. FIR滤波器基础</a></li>
@@ -30,9 +30,23 @@ permalink: /archive/
 &nbsp;
 ### 数字图像处理
 <hr style="border: 2px solid #ccc; margin: 20px 0;">
+2013年后半年的时候，为期大概不到一个学期的「研修A」的课程顺利完成。我选择图像处理方向为后续卒論的课题，并开始在阿部老师的指导下，系统的进行图像处理相关知识的学习。和「研修A」一样，当时我也定期整理笔记在CSDN博客进行更新（[Finn's CSDN 数字图像处理专栏]）。
 
-施工中 ... 
+研究过程中主要参考冈萨雷斯教授的经典著作[《Digital Image Processing》]（绿皮书），博文中所使用的实验图像均源自该教材配套网站。
 
+虽说在AI浪潮的影响下，数字图像处理已经由经典的计算性学科，彻底变为了实验性学科。但是一些传统的经典的算法，仍然为很多AI算法提供了有力的理论支持。
+「研修A」部份的内容整理完毕后，最近（2025年3月）也开始着手整理这部份的博文。同样的，这部份的内容也可能存在一些不够严谨的部份，如发现任何错误，欢迎通过邮件指正。
+
+[《Digital Image Processing》]: https://www.imageprocessingplace.com/
+[Finn's CSDN 数字图像处理专栏]: https://blog.csdn.net/zhoufan900428/category_1700021.html
+
+目前仍在，施工中 ... 
+<!-- 
+<ul>
+    <li><a href="{{ site.baseurl }}/2013/10/14/basic-Intensity-Transformations-Functions">1. basic-Intensity-Transformations-Functions</a></li>
+    <li><a href="{{ site.baseurl }}/2013/10/20/Histogtam-Processing">2. Histogtam-Processing</a></li>
+</ul> 
+-->
 
 
 &nbsp;
@@ -40,7 +54,7 @@ permalink: /archive/
 <hr style="border: 2px solid #ccc; margin: 20px 0;">
 2015年我加入M社，从事ISP算法开发工作，主要负责色彩矫正和色彩恒常性相关算法的研发。在实际工作中，色彩理论是图像处理领域的基础且关键的组成部分，涉及物理学和光学等多学科知识。这些理论在相机成像、显示器、工业印刷和摄影等多个行业中有着广泛应用。
 
-然而，我发现公司内许多同事并未系统学习过色彩科学理论。为此，我利用业余时间翻译整理了日本シーシーエス株式会社的**[「光と色の話」]**系列文章，为团队提供色彩科学的入门科普。
+然而，我发现公司内许多同事并未系统学习过色彩科学理论。为此，我利用业余时间翻译整理了日本シーシーエス株式会社的**[「光と色の話」]**系列文章，为团队提供了一些简单的色彩科学的入门科普。
 
 我将该系列译为"话说光与色"，原文从2011年开始连载，至2016年5月完成第一部，共42篇。2016年6月，我从中精选了12篇核心内容，翻译整理后发布在M社内部知识库，供同事学习参考。这些内容主要从三个方面介绍色彩科学基础：
   - 色彩的本质与感知
@@ -53,7 +67,7 @@ permalink: /archive/
 
 
 
-施工中 ... 
+目前仍在，施工中 ... 
 
 
 
