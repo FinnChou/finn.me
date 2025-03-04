@@ -8,6 +8,7 @@ tags: 数字图像处理
 
 &nbsp;
 ### 直方图均衡 (Histogram Equalization)
+<hr style="border: 2px solid #ccc; margin: 20px 0;">
 图像的直方图，表示了其灰度分布的特性。对于数字图像来说，假设灰度值$k$出现了$n_k$次，那么其概率密度函数如下所示。
 
 $$
@@ -77,11 +78,11 @@ $$
 \end{aligned}
 $$
 
-### 实验
+#### 实验
 直方图均衡的实现，有如下 Matlab 代码：
 
 
-{% highlight matlab %}
+```matlab
 close all;
 clear all;
 
@@ -158,7 +159,7 @@ axis([0,1,0,1]),grid;
 axis square;
 xlabel('intensity level of s');
 ylabel('P_{s}(s)');
-{% endhighlight %}
+```
 
 其直方图均衡后的图像与灰度直方图如下所示。
 
@@ -183,6 +184,7 @@ ylabel('P_{s}(s)');
 
 &nbsp;
 ### 直方图匹配 (Histogram Matching)
+<hr style="border: 2px solid #ccc; margin: 20px 0;">
 直方图均衡是一种有效的图像处理技术，它能够生成一个灰度直方图分布均匀的图像。这意味着直方图均衡的结果是唯一且可重复的。当我们需要增强图像的对比度时，直方图均衡通常能够提供令人满意的效果。然而，如果对直方图均衡的结果不尽如人意，我们可能需要对其算法进行进一步的调整和优化。
 
 例如，以下这张图像（来源于《Digital Image Processing》Rafael C. Gonzalez / Richard E. Woods）展示了使用直方图均衡处理后的结果。
@@ -235,7 +237,7 @@ $$
 
 根据直方图匹配的结果，我们可以观察到，所得结果与我们期望的分布非常接近。这一结果也符合我们的初衷，使得原图的直方图略微向左移动。与直方均衡相比，所获得的结果显著更为优越。
 
-{% highlight matlab %}
+```matlab
 %% -------------Histogram Matching-----------------
 close all;
 clear all;
@@ -348,7 +350,7 @@ axis([0,1,0,1]),grid;
 axis square;
 xlabel('Input intensity level');
 ylabel('Onput intensity level');
-{% endhighlight %}
+```
 
 
 

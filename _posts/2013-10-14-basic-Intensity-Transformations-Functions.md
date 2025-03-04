@@ -1,24 +1,22 @@
 ---
 layout: post
-title: "Intensity Transformations : 负片，对数变换，伽马变换，灰度拉伸，灰度切割，位图切割"
+title: "Intensity Transformations : 灰度变换"
 date: 2013-10-14 16:54:36 +0800
 tags: 数字图像处理
 # categories: jekyll update
 ---
 
-## 前言
-灰度变换（Intensity Transformations）是一个非常重要的概念。本文主要参考了《Digital Image Processing》一书的第三章，作者为Rafael C. Gonzalez和Richard E. Woods。在书中，所有实验和数学公式都基于8-bit图像的灰度范围，即0到255，这一点存在一定的不合理性。首先，这种做法并不通用，因为图像不一定是8-bit的。其次，在进行某些变换时，可能会出现溢出问题。例如，在伽马变换中，假设伽马值为2，灰度值为255的像素点经过变换后，其值将变为65025，这显然超出了范围。
+本文主要参考了《Digital Image Processing》一书的第三章，主要介绍了一些列的灰度变换（Intensity Transformations）的相关内容。灰度变换的算法，一般是对单通道的灰度图像进行处理。而对于彩色图像，无论是何种格式（RGB，RGBA，CMYK），都可以单独的将某一个通道单独取出来，也可以进行灰度变换算法的处理。所以，以灰度图像的逐像素处理的算法为基础进行描述，也可以比较方便的运用于彩色图像。
 
-使用Matlab进行计算时，可以通过mat2gray函数将数据压缩到0到255的范围。然而，在其他嵌入式平台上直接应用这种方法并不方便，并且从8位图像的角度来看，也显得不够直观。因此，我对数学公式进行了调整，使其输入和输出均为0到1的浮点数，这种方式更加易于理解。
+另外在图像数据处理的时候，一般都需要将图像的像素值缩放到一定的范围内，常用的缩放范围是$[0, 1]$ 或者 $[-1, 1]$。 这个过程通常被称为图像归一化(Image Normalization)。
 
-本文所使用的图片，均来源于《Digital Image Processing》的主页：
-- [Digital Image Processing homepage]
+当前，常用的数字图像大多数依旧是8bits的数据，其像素范围为$[0, 255]$。数字图像数据目前比较常用的压缩格式JPG，基本就是8bits图像。当然，也存在一些16bits的图像数据，比如TIFF格式，PNG格式等，都支持存储16bits的图像数据。还有一些Camera RAW格式图像，可能存储了12bits，14bits或16bits的图像数据。而这些Raww数据并非通用的编码格式，实际处理的时候需要特殊的渲染引擎。
 
-[Digital Image Processing homepage]: https://www.imageprocessingplace.com/
-
+如果直接使用8bits或者16bits的图像数据进行计算，那么计算结果会超出范围的时候，就需要频繁进行处理。因此，我对数学公式进行了调整，使其输入和输出均归一化到$[0, 1]$的范围内。
 
 &nbsp;
-## 图像负片 (Image Negativates)  
+### 图像负片 (Image Negativates)  
+<hr style="border: 2px solid #ccc; margin: 20px 0;">
 有地方翻译为图像反转，这个翻译不是很恰当。这里应该理解为负片变换，负片变换如下所示。
   
 $$
@@ -33,6 +31,7 @@ $$
 
 &nbsp;
 ### 对数变换 (Log Transformations)
+<hr style="border: 2px solid #ccc; margin: 20px 0;">
 对数变换主要用于将图像的低灰度值部分扩展，将其高灰度值部分压缩，以达到强调图像低灰度部分的目的。变换方法由下式给出。
 
 $$
@@ -49,7 +48,7 @@ $$
 
 实现对数变换的Matlab代码如下：
 
-{% highlight matlab %}
+```matlab
 close all;
 clear all;
 
@@ -82,11 +81,12 @@ xlabel('c).Log Transformations v=100');
 subplot(1,2,2);
 imshow(g_3,[0 1]);
 xlabel('d).Log Transformations v=200');
-{% endhighlight %}
+```
 
 
 &nbsp;
-## 伽马变换 (Power-Law (Gamma) Transformations )
+### 伽马变换 (Power-Law (Gamma) Transformations )
+<hr style="border: 2px solid #ccc; margin: 20px 0;">
 伽马变换主要用于图像的校正，将漂白的图片或者是过黑的图片，进行修正。伽马变换也常常用于显示屏的校正，这是一个非常常用的变换。其变化所用数学式如下所示，
 
 $$
@@ -101,10 +101,10 @@ $$
 
 和对数变换一样，伽马变换可以强调图像的某个部分。根据下面两个实验，可以看出伽马变换的作用。
 
-### 实验1 :
+#### 实验1 :
 <div align=center><img src="{{ site.baseurl }}/assets/basic-Intensity-Transformations-Functions/Gamma-Transformations-t1.jpeg" width="600"></div>
 
-{% highlight matlab %}
+```matlab
 close all;
 clear all;
 
@@ -124,14 +124,15 @@ xlabel('a).Original Image');
 subplot(1,2,2);
 imshow(g2,[0 1]);
 xlabel('b).Gamma Transformations \gamma = 0.4');
-{% endhighlight %}
+```
 
-### 实验2 :
+#### 实验2 :
 <div align=center><img src="{{ site.baseurl }}/assets/basic-Intensity-Transformations-Functions/Gamma-Transformations-t2.jpeg" width="600"></div>
 
 
 &nbsp;
-## 对比度拉伸 (Contrast Stretching)
+### 对比度拉伸 (Contrast Stretching)
+<hr style="border: 2px solid #ccc; margin: 20px 0;">
 对比度拉伸是一种用于增强图像特定部分的技术。与伽马变换和对数变换不同，对比度拉伸能够有效改善图像的动态范围。这种方法可以将原本低对比度的图像转换为高对比度图像。实现对比度拉伸的方法有很多，其中最简单的一种是线性拉伸。然而，本文将介绍一种稍微复杂一些的方法，如下所示。
 
 
@@ -151,9 +152,9 @@ $$
 
 只是，其输入满足$src_{(x,y)} \in [0, 1]$的时候，其输出范围变为了 $res_{(x,y)} \in [\frac{1}{1 + (\frac{m}{eps})^{E}}, \frac{1}{1 + (\frac{m}{1 + eps})^{E}}]$，近似可以视为$res_{(x,y)} \in [0, 1]$。 为了精确起见，使用mat2gray函数将其扩展到精确的。调用格式如下。
 
-{% highlight matlab %}
+```matlab
 res = mat2gray(src, [1/(1+(m/eps)^E) 1/(1+(m/1+eps)^E)]);
-{% endhighlight %}
+```
 
 输入输出问题已经解决，但仍然存在一个待处理的问题，即参数的确定。这里涉及两个参数：$m$（对于巴特沃斯高通滤波器而言，这是截止频率）和$E$（同样是针对巴特沃斯高通滤波器，这是滤波器的次数）。参数$m$可以调节变换曲线的重心，而$E$则影响曲线的斜率，如下图所示。
 
@@ -179,7 +180,7 @@ E &= ceil(min(E_{1}, E_{2})
 \end{aligned}
 $$
 
-### 实验:
+#### 实验:
 <div align=center><img src="{{ site.baseurl }}/assets/basic-Intensity-Transformations-Functions/Contrast-Stretching-t1.jpeg" width="600"></div>
 
 从直方图看，原图的灰度范围确实被拉伸了。用上面所说的方法，确定的灰度拉伸的输入输出曲线如下图所示。
@@ -187,7 +188,7 @@ $$
 
 其Matlab代码如下：
 
-{% highlight matlab %}
+```matlab
 close all;
 clear all;
 
@@ -246,12 +247,13 @@ axis([0,1,0,1]),grid;
 axis square;
 xlabel('Input intensity level');
 ylabel('Onput intensity level');
-{% endhighlight %}
+```
 
 
 
 &nbsp;
-## 灰度切割 (Intensity-level Slicing)
+#### 灰度切割 (Intensity-level Slicing)
+<hr style="border: 2px solid #ccc; margin: 20px 0;">
 灰度切割也是一个很简单，但也很实用的变换。灰度切割，主要用于强调图像的某一部份，将这个部分赋为一个较高的灰度值，其变换对应关系如下所示。
 
 <div align=center><img src="{{ site.baseurl }}/assets/basic-Intensity-Transformations-Functions/Intensity-level-Slicing.jpeg" width="600"></div>
@@ -262,17 +264,10 @@ ylabel('Onput intensity level');
 
 
 &nbsp;
-### 位图切割 (Bit-plance Slicing)
+#### 位图切割 (Bit-plance Slicing)
+<hr style="border: 2px solid #ccc; margin: 20px 0;">
 位图切割，就是按照图像的位，将图像分层处理。若图像的某个像素，其bit7为1，则在位面7这个像素值为1，反之则为0。
 
 <div align=center><img src="{{ site.baseurl }}/assets/basic-Intensity-Transformations-Functions/Bit-plance-Slicing.jpeg" width="600"></div>
 
 由位图切割的结果，图像的主要信息包含在了高4位。仅仅靠高4位，还原的图像更原图基本差不多。由此可见，位图切割主要用于图像压缩。
-
-
-
-&nbsp;
-## 追记
-本文于2013年，发布在 CSDN。
-执行移动作业时候，重新使用 Latex 将公式进行了重写。回忆起了当时在使用CSDN时候，由于无法插入 Latex 公式，只能每个公式都是贴图像的无奈。这个算是reHD版本了。
-同时轻微修复了语言上的一些逻辑。

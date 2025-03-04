@@ -40,13 +40,12 @@ permalink: /archive/
 [《Digital Image Processing》]: https://www.imageprocessingplace.com/
 [Finn's CSDN 数字图像处理专栏]: https://blog.csdn.net/zhoufan900428/category_1700021.html
 
-目前仍在，施工中 ... 
-<!-- 
+
 <ul>
-    <li><a href="{{ site.baseurl }}/2013/10/14/basic-Intensity-Transformations-Functions">1. basic-Intensity-Transformations-Functions</a></li>
-    <li><a href="{{ site.baseurl }}/2013/10/20/Histogtam-Processing">2. Histogtam-Processing</a></li>
+    <li><a href="{{ site.baseurl }}/2013/10/14/basic-Intensity-Transformations-Functions">1. Intensity Transformations: 灰度变换</a></li>
+    <li><a href="{{ site.baseurl }}/2013/10/20/Histogtam-Processing">2. Histogtam-Processing: 直方图处理</a></li>
 </ul> 
--->
+
 
 
 &nbsp;
